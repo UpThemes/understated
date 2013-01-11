@@ -1,0 +1,42 @@
+<section class="main-content" role="main">
+
+	{{ entries:listing folder="blog" limit="5" }}
+	{{ if link_url }}
+	<article class="link container">
+		<header class="entry-header">
+			<h1><a href="{{ url }}">{{ title }}</a><a class="ss-icon" href="{{ link_url }}">&#x1F517;</a></h1>
+			<p class="meta">Posted {{ date format="F jS, Y" }}</p>
+		</header>
+		<div class="entry-content">
+			{{ content }}
+			<p class="reply"><a href="{{ url }}#reply">Reply <span class="ss-icon">&#x21A9;</span></a></p>
+		</div>
+	</article>
+	{{ else }}
+	<article class="article container">
+		<header class="entry-header">
+			<h1><a href="{{ url }}">{{ title }}</a></h1>
+			<p class="meta">Posted {{ date format="F jS, Y" }}</p>
+		</header>
+		<div class="entry-content">
+			{{ content }}
+			<p class="reply"><a href="{{ url }}#reply">Reply <span class="ss-icon">&#x21A9;</span></a></p>
+		</div>
+	</article>
+	{{ endif }}
+	{{ /entries:listing }}
+
+</section>
+
+{{ entries:pagination folder="blog" limit="5"}}
+<nav class="pagination container">
+	<ul class="cf">
+		{{ if previous_page }}
+		<li class="previous"><a href="{{ previous_page }}" class="button"><span class="ss-icon">Previous</span></a></li>
+		{{ endif }}
+		{{ if next_page }}
+		<li class="next"><a href="{{ next_page }}" class="button"><span class="ss-icon">Next</span></a></li>
+		{{ endif }}
+	</ul>
+</nav>
+{{ /entries:pagination }}

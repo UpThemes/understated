@@ -1,0 +1,15 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+theme_name: understated
+
+# Comments + Disqus
+disqus_account: changeme
+show_comments: no
+
+# Global text snippets
+no_results_text: "Sorry, no results found."

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{ if title }}{{ title }} / {{ endif }}{{ _site_name }}</title>
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="{{ theme:css }}">
+
+	<script src="{{ theme:js src="prefixfree" }}"></script>
+
+	<!--[if lt IE 9]><script src="{{ theme:js src="html5" }}"></script><![endif]-->
+
+</head>
+<body>
+
+	<div class="logomark">
+		<img src="{{ theme:img src="logomark.svg" }}" width="32" height="32">
+	</div>
+
+	<div class="site-wrapper">
+
+		<header class="site-header container" role="banner">
+			<h1><a href="/">{{ _site_name }}</a></h1>
+		</header>
+
+    {{ theme:partial src="nav" }}
+
+		{{ layout_content }}
+
+    {{ theme:partial src="category-list" }} 
+
+    {{ theme:partial src="theme-details" }}
+
+	</div>
+
+</body>
+</html>

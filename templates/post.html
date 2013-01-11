@@ -1,0 +1,29 @@
+<section class="main-content" role="main">
+
+	{{ if link_url }}
+	<article class="link container">
+		<header class="entry-header">
+			<h1><a href="{{ url }}">{{ title }}</a><a class="ss-icon" href="{{ link_url }}">&#x1F517;</a></h1>
+		</header>
+		<div class="entry-content">
+			{{ content }}
+			<p class="reply"><a href="{{ url }}#reply">Reply <span class="ss-icon">&#x21A9;</span></a></p>
+		</div>
+	</article>
+	{{ else }}
+	<article class="article container">
+		<header class="entry-header">
+			<h1><a href="{{ url }}">{{ title }}</a></h1>
+		</header>
+		<div class="entry-content">
+			{{ content }}
+			<p class="reply"><a href="{{ url }}#reply">Reply <span class="ss-icon">&#x21A9;</span></a></p>
+		</div>
+	</article>
+	{{ endif }}
+
+	<section id="reply" class="comments container">
+		{{ disqus:comments account="galengidmancom" }}
+	</section>
+
+</section>
